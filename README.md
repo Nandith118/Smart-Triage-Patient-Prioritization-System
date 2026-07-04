@@ -54,7 +54,7 @@ Despite Ram arriving first, both Sam and Alex are correctly prioritized ahead of
 ## Setup Instructions
 
 ```bash
-git clone https://github.com/Nandith118/max-heap-er-triage-api.git
+git clone https://github.com/Nandith118/Smart-Triage-Patient-Prioritization-System.git
 cd max-heap-er-triage-api
 pip install fastapi uvicorn numpy pandas scikit-learn
 python train_triage_ai.py
