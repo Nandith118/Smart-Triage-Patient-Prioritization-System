@@ -31,6 +31,18 @@ Patients are stored in a binary max heap keyed on their Urgency Score, implement
 ### 3. FastAPI Serving Layer
 A single POST endpoint, /api/admit-patient, accepts kiosk style vitals through a Pydantic schema, runs them through the trained model, inserts the result into the shared in memory heap, and returns the admitted patient's score alongside the current next patient to call. CORS is open for direct API testing without a frontend.
 
+## Benchmark Results
+
+To validate that the binary max heap actually earns its place over a simpler approach, insertion performance was benchmarked against a standard array with re-sorting, using 1,000 sequential insertions.
+
+
+
+Benchmarking Performance Proof :
+
+![Benchmark Test Results](./benchmark_test_results.png)
+
+
+
 ## Example Run
 
 <img width="1090" height="552" alt="Screenshot 2026-07-04 094823" src="https://github.com/user-attachments/assets/83bcb991-9648-43ca-9e86-bd3471096e89" />
