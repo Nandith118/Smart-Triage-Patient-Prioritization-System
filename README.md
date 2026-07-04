@@ -41,7 +41,7 @@ Sample API response after admitting Alex:
 <img width="692" height="303" alt="Screenshot 2026-07-04 094943" src="https://github.com/user-attachments/assets/86113cb2-bbd4-4abd-bada-5cf969bed819" />
 
 
-Notice that despite Ram arriving first, both Sam and Alex are correctly prioritized ahead of him based on Urgency Score, exactly the behavior a manually sorted arrival queue would fail to capture.
+Despite Ram arriving first, both Sam and Alex are correctly prioritized ahead of him based on Urgency Score, exactly the behavior a manually sorted arrival queue would fail to capture.
 
 ## Tech Stack
 
