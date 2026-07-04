@@ -53,12 +53,13 @@ Despite Ram arriving first, both Sam and Alex are correctly prioritized ahead of
 
 ## Setup Instructions
 
-
-git clone https://github.com/<your-username>/max-heap-er-triage-api.git
+```bash
+git clone https://github.com/Nandith118/max-heap-er-triage-api.git
 cd max-heap-er-triage-api
 pip install fastapi uvicorn numpy pandas scikit-learn
 python train_triage_ai.py
 uvicorn main:app --reload
+```
 
 
 Once running, send a POST request to http://127.0.0.1:8000/api/admit-patient with a JSON body matching the KioskInput schema (patient_name, age, heart_rate, oxygen_sat, pain_score, systolic_bp) using any API client.
