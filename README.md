@@ -39,8 +39,7 @@ To validate that the binary max heap actually earns its place over a simpler app
 
 Benchmarking Performance Proof :
 
-<img width="830" height="237" alt="Screenshot 2026-07-04 112923" src="https://github.com/user-attachments/assets/5ec46bdd-1888-4c54-bd5d-e5af05e98d06" />
-
+<img width="878" height="232" alt="image" src="https://github.com/user-attachments/assets/f6ba4dcb-5396-492a-a074-1bff64ac783a" />
 
 
 
