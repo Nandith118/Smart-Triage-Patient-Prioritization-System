@@ -28,7 +28,7 @@ if __name__ == "__main__":
     SCALE_SIZE = 1000
     mock_dataset = [{"name": f"Patient_{i}", "score": random.uniform(0, 100)} for i in range(SCALE_SIZE)]
     
-    print(f"📊 Benchmarking Performance Proof (for {SCALE_SIZE} Sequential Insertions) \n")
+    print(f"Benchmarking Performance Proof (for {SCALE_SIZE} Sequential Insertions) \n")
     
     # standard array
     standard_queue = []
