@@ -1,6 +1,8 @@
 # Smart-Triage-Patient-Prioritization-System
 An AI powered emergency room triage system that scores incoming patients from raw vitals using a trained machine learning model, then maintains a live, always sorted priority queue using a custom built binary max heap. Exposed as a FastAPI backend, tested directly via API requests.
 
+Benchmarked against a naive array based approach with re-sorting, the binary max heap achieves around *36.4x speedup* on sequential patient insertions (0.0267s → 0.0007s for 1,000 insertions), confirming that its O(log n) design holds up under real, measured load rather than staying purely theoretical.
+
 ## Why This Exists
 
 In a real ER, patients are usually queued by arrival time, which does not reflect actual medical urgency. This project explores replacing that with an automated first pass triage score computed the moment a patient's vitals are entered, so the most critical patient is always identifiable first, regardless of when they walked in.
@@ -35,12 +37,17 @@ A single POST endpoint, /api/admit-patient, accepts kiosk style vitals through a
 
 To validate that the binary max heap actually earns its place over a simpler approach, insertion performance was benchmarked against a standard array with re-sorting, using 1,000 sequential insertions.
 
-
+| Approach | Time (1,000 insertions) |
+|---|---|
+| Standard array with re-sorting | 0.0267 seconds |
+| Binary max heap (this project) | 0.0007 seconds |
+| *Improvement* | *36.4x faster* |
 
 Benchmarking Performance Proof :
 
 <img width="878" height="232" alt="image" src="https://github.com/user-attachments/assets/f6ba4dcb-5396-492a-a074-1bff64ac783a" />
 
+*Takeaway:* as the number of waiting patients grows, re-sorting the entire list on every new arrival becomes increasingly expensive, while the heap's O(log n) insertion stays cheap. At 1,000 insertions this difference is already a 36.4x gap, and it widens further at larger scale.
 
 
 ## Example Run
